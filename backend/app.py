@@ -1,0 +1,35 @@
+from flask_cors import CORS
+from flask import Flask
+from database import mysql
+import config
+from routes.auth import auth
+from routes.complaints import complaints
+from routes.admin import admin
+
+app = Flask(__name__)
+
+CORS(app)
+
+# MySQL Configuration
+app.config["MYSQL_HOST"] = config.MYSQL_HOST
+app.config["MYSQL_USER"] = config.MYSQL_USER
+app.config["MYSQL_PASSWORD"] = config.MYSQL_PASSWORD
+app.config["MYSQL_DB"] = config.MYSQL_DB
+app.config["MYSQL_CURSORCLASS"] = config.MYSQL_CURSORCLASS
+
+# Secret Key
+app.secret_key = config.SECRET_KEY
+
+# Initialize MySQL
+mysql.init_app(app)
+
+app.register_blueprint(auth)
+app.register_blueprint(complaints)
+app.register_blueprint(admin)
+
+@app.route("/")
+def home():
+    return "Student Complaint Management System Backend Running Successfully!"
+
+if __name__ == "__main__":
+    app.run(debug=True)
