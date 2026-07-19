@@ -16,6 +16,8 @@ app.config["MYSQL_USER"] = config.MYSQL_USER
 app.config["MYSQL_PASSWORD"] = config.MYSQL_PASSWORD
 app.config["MYSQL_DB"] = config.MYSQL_DB
 app.config["MYSQL_CURSORCLASS"] = config.MYSQL_CURSORCLASS
+app.config["MYSQL_PORT"] = config.MYSQL_PORT
+
 
 # Secret Key
 app.secret_key = config.SECRET_KEY

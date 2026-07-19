@@ -1,5 +1,6 @@
+
 MYSQL_HOST = "tokaido.proxy.rlwy.net"
-MYSQL_PORT = 3306          
+MYSQL_PORT = 3306
 MYSQL_USER = "root"
 MYSQL_PASSWORD = "CLxaEaKAbjWcIVffDitWkLuIJLrREfkh"
 MYSQL_DB = "railway"
