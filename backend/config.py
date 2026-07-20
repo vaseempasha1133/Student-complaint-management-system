@@ -1,9 +1,10 @@
+import os
 
-MYSQL_HOST = "tokaido.proxy.rlwy.net"
-MYSQL_PORT = 26605
-MYSQL_USER = "root"
-MYSQL_PASSWORD = "CLxaEaKAbjWcIVffDitWkLuIJLrREfkh"
-MYSQL_DB = "railway"
-MYSQL_CURSORCLASS = "DictCursor"
+MYSQL_HOST = os.getenv("MYSQL_HOST")
+MYSQL_PORT = int(os.getenv("MYSQL_PORT", 3306))
+MYSQL_USER = os.getenv("MYSQL_USER")
+MYSQL_PASSWORD = os.getenv("MYSQL_PASSWORD")
+MYSQL_DB = os.getenv("MYSQL_DB")
+MYSQL_CURSORCLASS = os.getenv("MYSQL_CURSORCLASS", "DictCursor")
 
-SECRET_KEY = "student_complaint_secret_key"
+SECRET_KEY = os.getenv("SECRET_KEY")
