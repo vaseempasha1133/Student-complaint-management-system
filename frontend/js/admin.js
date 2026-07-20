@@ -13,7 +13,7 @@ if (adminLoginForm) {
 
         };
 
-        const response = await fetch("https://student-complaint-management-system-beqs.onrender.com/login", {
+        const response = await fetch("https://student-complaint-management-system-beqs.onrender.com/admin/login", {
 
             method: "POST",
 
