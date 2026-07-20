@@ -13,7 +13,7 @@ if (adminLoginForm) {
 
         };
 
-        const response = await fetch("http://127.0.0.1:5000/admin/login", {
+        const response = await fetch("https://student-complaint-management-system-beqs.onrender.com/login", {
 
             method: "POST",
 
@@ -50,7 +50,7 @@ async function loadAllComplaints() {
 
     try {
 
-        const response = await fetch("http://127.0.0.1:5000/admin/complaints");
+        const response = await fetch("https://student-complaint-management-system-beqs.onrender.com/admin/complaints");
 
         const complaints = await response.json();
 
@@ -115,7 +115,7 @@ async function updateStatus(complaintId) {
     );
 
     const response = await fetch(
-        `http://127.0.0.1:5000/admin/complaints/${complaintId}`,
+        `https://student-complaint-management-system-beqs.onrender.com/admin/complaints/${complaintId}`,
         {
             method: "PUT",
 

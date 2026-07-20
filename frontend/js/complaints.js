@@ -24,7 +24,7 @@ if (complaintForm) {
 
         };
 
-        const response = await fetch("http://127.0.0.1:5000/complaints", {
+        const response = await fetch("https://student-complaint-management-system-beqs.onrender.com/complaints", {
 
             method: "POST",
 
