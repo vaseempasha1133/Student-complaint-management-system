@@ -39,6 +39,27 @@ if (adminLoginForm) {
 
 }
 // ----------------------------
+// Admin Logout
+// ----------------------------
+
+async function adminLogout() {
+
+    const response = await fetch(
+        "https://student-complaint-management-system-beqs.onrender.com/admin/logout",
+        {
+            method: "POST"
+        }
+    );
+
+    const result = await response.json();
+
+    alert(result.message);
+
+    if (response.status === 200) {
+        window.location.href = "admin-login.html";
+    }
+}
+// ----------------------------
 // Load All Complaints
 // ----------------------------
 

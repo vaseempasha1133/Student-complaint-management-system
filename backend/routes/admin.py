@@ -43,6 +43,17 @@ def admin_login():
         "message": "Invalid Username or Password"
     }), 401
 # ----------------------------
+# Admin Logout
+# ----------------------------
+@admin.route("/admin/logout", methods=["POST"])
+def admin_logout():
+
+    session.clear()
+
+    return jsonify({
+        "message": "Admin Logout Successful"
+    }), 200
+# ----------------------------
 # View All Complaints
 # ----------------------------
 @admin.route("/admin/complaints", methods=["GET"])
