@@ -16,7 +16,7 @@ if (registerForm) {
             password: document.getElementById("password").value
         };
 
-        const response = await fetch("https://student-complaint-management-system-beqs.onrender.com/register", {
+        const response = await fetch("http://13.50.107.23/register", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
@@ -54,7 +54,7 @@ if (loginForm) {
 
         };
 
-        const response = await fetch("https://student-complaint-management-system-beqs.onrender.com/login", {
+        const response = await fetch("http://13.50.107.23/login", {
 
             method: "POST",
 
