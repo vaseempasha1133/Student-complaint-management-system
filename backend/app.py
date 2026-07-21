@@ -29,10 +29,9 @@ mysql.init_app(app)
 app.register_blueprint(auth)
 app.register_blueprint(complaints)
 app.register_blueprint(admin)
-
 @app.route("/")
 def home():
-    return "🚀hiii this is Vaseem  Automatic Deployment is Working!"
+    return "🚀 Automatic Deployment is Working!"
 
 import os
 
