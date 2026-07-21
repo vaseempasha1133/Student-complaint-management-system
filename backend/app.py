@@ -32,7 +32,7 @@ app.register_blueprint(admin)
 
 @app.route("/")
 def home():
-    return "return "🚀 CI/CD Working Successfully!""
+    return "🚀 CI/CD Working Successfully!""
 
 import os
 
