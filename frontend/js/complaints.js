@@ -24,7 +24,7 @@ if (complaintForm) {
 
         };
 
-        const response = await fetch("http://13.50.107.23/complaints", {
+        const response = await fetch("http://13.50.107.23/api/complaints", {
 
             method: "POST",
 

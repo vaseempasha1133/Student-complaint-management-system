@@ -13,7 +13,7 @@ if (adminLoginForm) {
 
         };
 
-        const response = await fetch("http://13.50.107.23/admin/login", {
+        const response = await fetch("http://13.50.107.23/admin/api/login", {
 
             method: "POST",
 
@@ -45,7 +45,7 @@ if (adminLoginForm) {
 async function adminLogout() {
 
     const response = await fetch(
-        "http://13.50.107.23/admin/logout",
+        "http://13.50.107.23/admin/api/logout",
         {
             method: "POST"
         }
@@ -71,7 +71,7 @@ async function loadAllComplaints() {
 
     try {
 
-        const response = await fetch("http://13.50.107.23/admin/complaints");
+        const response = await fetch("http://13.50.107.23/admin/api/complaints");
 
         const complaints = await response.json();
 
@@ -136,7 +136,7 @@ async function updateStatus(complaintId) {
     );
 
     const response = await fetch(
-        `http://13.50.107.23/admin/complaints/${complaintId}`,
+        `http://13.50.107.23/admin/api/complaints/${complaintId}`,
         {
             method: "PUT",
 

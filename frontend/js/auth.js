@@ -16,7 +16,7 @@ if (registerForm) {
             password: document.getElementById("password").value
         };
 
-        const response = await fetch("http://13.50.107.23/register", {
+        const response = await fetch("http://13.50.107.23/api/register", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
@@ -54,7 +54,7 @@ if (loginForm) {
 
         };
 
-        const response = await fetch("http://13.50.107.23/login", {
+        const response = await fetch("http://13.50.107.23/api/login", {
 
             method: "POST",
 
