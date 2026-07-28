@@ -1,86 +1,17 @@
-const registerForm = document.getElementById("registerForm");
+const response = await fetch(API_URL + "/login", {
+    method: "POST",
+    headers: {
+        "Content-Type": "application/json"
+    },
+    body: JSON.stringify(data)
+});
 
-if (registerForm) {
+const text = await response.text();
+console.log("Server response:", text);
 
-    registerForm.addEventListener("submit", async function(e) {
-
-        e.preventDefault();
-
-        const student = {
-            name: document.getElementById("name").value,
-            roll_number: document.getElementById("roll_number").value,
-            email: document.getElementById("email").value,
-            phone: document.getElementById("phone").value,
-            department: document.getElementById("department").value,
-            year: document.getElementById("year").value,
-            password: document.getElementById("password").value
-        };
-
-        const response = await fetch("https://student-complaint-management-system-beqs.onrender.com/register", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify(student)
-        });
-
-        const result = await response.json();
-
-        alert(result.message);
-
-        if(response.status === 201){
-            window.location.href = "student-login.html";
-        }
-
-    });
-
+let result;
+try {
+    result = JSON.parse(text);
+} catch (err) {
+    throw new Error("Server returned HTML instead of JSON:\n" + text);
 }
-// ----------------------------
-// Student Login
-// ----------------------------
-
-const loginForm = document.getElementById("loginForm");
-
-if (loginForm) {
-
-    loginForm.addEventListener("submit", async function (e) {
-
-        e.preventDefault();
-
-        const loginData = {
-
-            email: document.getElementById("email").value,
-            password: document.getElementById("password").value
-
-        };
-
-        const response = await fetch("https://student-complaint-management-system-beqs.onrender.com/login", {
-
-            method: "POST",
-
-            headers: {
-                "Content-Type": "application/json"
-            },
-
-            body: JSON.stringify(loginData)
-
-        });
-
-        const result = await response.json();
-
-        alert(result.message);
-
-        if (response.status === 200) {
-
-            localStorage.setItem(
-                "student",
-                JSON.stringify(result.student)
-            );
-
-            window.location.href = "dashboard.html";
-
-        }
-
-    });
-
-}   
