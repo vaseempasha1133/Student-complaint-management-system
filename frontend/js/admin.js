@@ -136,7 +136,7 @@ async function updateStatus(complaintId) {
     );
 
     const response = await fetch(
-        `http://13.50.107.23/admin/api/complaints/${complaintId}`,
+        `https://student-complaint-management-system-beqs.onrender.com/complaints/${complaintId}`,
         {
             method: "PUT",
 

@@ -10,7 +10,7 @@ async function loadComplaints() {
     try {
 
         const response = await fetch(
-            `http://13.50.107.23/api/complaints/${student.student_id}`
+            `https://student-complaint-management-system-beqs.onrender.com/complaints/${student.student_id}`
         );
 
         const complaints = await response.json();
