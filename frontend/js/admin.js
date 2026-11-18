@@ -1,3 +1,8 @@
+const API_URL =
+    window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1"
+        ? "http://127.0.0.1:5000"
+        : "/api";
+
 const adminLoginForm = document.getElementById("adminLoginForm");
 
 if (adminLoginForm) {
@@ -13,7 +18,7 @@ if (adminLoginForm) {
 
         };
 
-        const response = await fetch("http://13.50.107.23/admin/api/login", {
+        const response = await fetch(`${API_URL}/admin/login`, {
 
             method: "POST",
 
@@ -45,7 +50,7 @@ if (adminLoginForm) {
 async function adminLogout() {
 
     const response = await fetch(
-        "http://13.50.107.23/admin/api/logout",
+        `${API_URL}/admin/logout`,
         {
             method: "POST"
         }
@@ -71,7 +76,7 @@ async function loadAllComplaints() {
 
     try {
 
-        const response = await fetch("http://13.50.107.23/admin/api/complaints");
+        const response = await fetch(`${API_URL}/admin/complaints`);
 
         const complaints = await response.json();
 
@@ -136,7 +141,7 @@ async function updateStatus(complaintId) {
     );
 
     const response = await fetch(
-        `https://student-complaint-management-system-beqs.onrender.com/complaints/${complaintId}`,
+        `${API_URL}/admin/complaints/${complaintId}`,
         {
             method: "PUT",
 

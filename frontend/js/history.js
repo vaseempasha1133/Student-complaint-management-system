@@ -1,17 +1,22 @@
+const API_URL =
+    window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1"
+        ? "http://127.0.0.1:5000"
+        : "/api";
+
 const student = JSON.parse(localStorage.getItem("student"));
 
 if (!student) {
     alert("Please login first.");
     window.location.href = "student-login.html";
+} else {
+    loadComplaints();
 }
 
 async function loadComplaints() {
 
     try {
 
-        const response = await fetch(
-            `https://student-complaint-management-system-beqs.onrender.com/complaints/${student.student_id}`
-        );
+        const response = await fetch(`${API_URL}/complaints/${student.student_id}`);
 
         const complaints = await response.json();
 
@@ -42,5 +47,3 @@ async function loadComplaints() {
     }
 
 }
-
-loadComplaints();

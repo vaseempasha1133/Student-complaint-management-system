@@ -1,3 +1,8 @@
+const API_URL =
+    window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1"
+        ? "http://127.0.0.1:5000"
+        : "/api";
+
 const complaintForm = document.getElementById("complaintForm");
 
 if (complaintForm) {
@@ -24,7 +29,7 @@ if (complaintForm) {
 
         };
 
-        const response = await fetch("https://student-complaint-management-system-beqs.onrender.com/complaints", {
+        const response = await fetch(`${API_URL}/complaints`, {
 
             method: "POST",
 
